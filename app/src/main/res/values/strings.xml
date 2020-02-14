@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">beach_agri</string>
+    <string name="click_here_to_login">click here to join</string>
+    <string name="register">Register</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="enter_username">Enter Username</string>
+    <string name="write_a_message">write message</string>
+    <string name="login">Login</string>
+    <string name="click_here_to_register">Register</string>
+    <string name="no_users_found">No Users Found</string>
+    <string name="product">product</string>
+    <string name="label">product_name</string>
+</resources>
