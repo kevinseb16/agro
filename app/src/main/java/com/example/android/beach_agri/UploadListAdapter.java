@@ -1,36 +1,51 @@
 package com.example.android.beach_agri;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
-public class UploadListAdapter extends RecyclerView.Adapter<UploadListAdapter.ViewHolder> {
+public class UploadListAdapter extends RecyclerView.Adapter<Viewholder> {
 
     public List<String> filenamelist;
+    public Context context;
+    private LayoutInflater mInflater;
 
 
-    public UploadListAdapter(List<String> filenamelist) {
+    public UploadListAdapter(Context context,List<String> filenamelist) {
+        this.context=context;
         this.filenamelist = filenamelist;
+        this.mInflater = LayoutInflater.from(context);
 
     }
 
-    @NonNull
+    // inflates the row layout from xml when needed
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.recyclerview, parent, false);
-        return new ViewHolder(view);
+    public Viewholder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View view = mInflater.inflate(R.layout.recyclerview, parent, false);
+        return new Viewholder(view);
     }
 
+
+
+
+
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull Viewholder holder, int position) {
         String fileName = filenamelist.get(position);
         holder.fileNameView.setText(fileName);
+        holder.setItemClickListener(new RecycleViewClickListener() {
+            @Override
+            public void onItemClick(int pos) {
+                Intent intent = new Intent(context,showdetails.class);
+            }
+        });
 
     }
 
@@ -39,18 +54,7 @@ public class UploadListAdapter extends RecyclerView.Adapter<UploadListAdapter.Vi
         return filenamelist.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
-
-        public TextView fileNameView;
-
-        View mView;
-
-        public ViewHolder(@NonNull View itemView) {
-            super(itemView);
-            mView = itemView;
-            fileNameView = (TextView) mView.findViewById(R.id.nameview);
 
 
-        }
-    }
+
 }

@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView=(RecyclerView)findViewById(R.id.Recyclerview);
 
         //initialise list adapter
-        uploadListAdapter = new UploadListAdapter(filenameList);
+        uploadListAdapter = new UploadListAdapter(this,filenameList);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setHasFixedSize(true);
         recyclerView.setAdapter(uploadListAdapter);
@@ -71,14 +71,16 @@ public class MainActivity extends AppCompatActivity {
         mDatabase1.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                filenameList.clear();
                 for (DataSnapshot userSnapshot: dataSnapshot.getChildren()) {
                     String name = userSnapshot.child("Productname").getValue().toString().trim();
                     filenameList.add(name);
-                    uploadListAdapter.notifyDataSetChanged();
+
                     Log.d(TAG, "onChildAdded:" + name);
 
-                }
 
+                }
+                uploadListAdapter.notifyDataSetChanged();
             }
 
             @Override
