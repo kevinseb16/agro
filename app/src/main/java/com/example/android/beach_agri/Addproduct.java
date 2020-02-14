@@ -78,7 +78,7 @@ public class Addproduct extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (containsimage) {
-                    product = new Product(uniqueID, eProductname.getText().toString().trim(), Integer.parseInt(eStock.getText().toString().trim()), Integer.parseInt(ePrice.getText().toString().trim()), imageuri.toString());
+                    product = new Product(user.getUid(), eProductname.getText().toString().trim(), Integer.parseInt(eStock.getText().toString().trim()), Integer.parseInt(ePrice.getText().toString().trim()), imageuri.toString());
                     mDatabase.child("Products").child(uniqueID).setValue(product);
                     mDatabase.child("Users").child(user.getUid()).child("ProductId").child(uniqueID).setValue("");
                     finish();
