@@ -102,9 +102,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         //if the task is successfull
                         if (task.isSuccessful()) {
                             //start the profile activity
+                            startActivity(new Intent(getApplicationContext(),MainActivity.class));
                             finish();
                             Toast.makeText(getApplicationContext(),"logged in",Toast.LENGTH_LONG);
-                         //   startActivity(new Intent(getApplicationContext(), Chat.class));
+
                         }
                     }
                 });

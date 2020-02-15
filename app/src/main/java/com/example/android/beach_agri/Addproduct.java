@@ -47,6 +47,7 @@ public class Addproduct extends AppCompatActivity {
     private String TAG="addproduct";
 
 
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -84,7 +85,7 @@ public class Addproduct extends AppCompatActivity {
                     finish();
                 }
                 else{
-                    product = new Product(uniqueID, eProductname.getText().toString().trim(), Integer.parseInt(eStock.getText().toString().trim()), Integer.parseInt(ePrice.getText().toString().trim()), null);
+                    product = new Product(user.getUid(), eProductname.getText().toString().trim(), Integer.parseInt(eStock.getText().toString().trim()), Integer.parseInt(ePrice.getText().toString().trim()), null);
                     mDatabase.child("Products").child(uniqueID).setValue(product);
                     mDatabase.child("Users").child(user.getUid()).child("ProductId").child(uniqueID).setValue("");
                     finish();

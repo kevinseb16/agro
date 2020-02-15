@@ -40,6 +40,8 @@ public class MainActivity extends AppCompatActivity {
     private UploadListAdapter uploadListAdapter;
     private RecyclerView recyclerView;
     private List<String> filenameList;
+    private List<String> imageurl;
+    private List<String> fileprice;
 
 
     @Override
@@ -48,7 +50,8 @@ public class MainActivity extends AppCompatActivity {
         overridePendingTransition(R.anim.fadein, R.anim.fadeout);
         setContentView(R.layout.activity_main);
         filenameList=new ArrayList<>();
-
+        imageurl=new ArrayList<>();
+        fileprice=new ArrayList<>();
         //initialise firebase
         firebaseStorage = FirebaseStorage.getInstance();
         mAuth= FirebaseAuth.getInstance();
@@ -62,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView=(RecyclerView)findViewById(R.id.Recyclerview);
 
         //initialise list adapter
-        uploadListAdapter = new UploadListAdapter(this,filenameList);
+        uploadListAdapter = new UploadListAdapter(this,filenameList,imageurl,fileprice);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setHasFixedSize(true);
         recyclerView.setAdapter(uploadListAdapter);
@@ -72,10 +75,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 filenameList.clear();
+                imageurl.clear();
+                fileprice.clear();
                 for (DataSnapshot userSnapshot: dataSnapshot.getChildren()) {
                     String name = userSnapshot.child("Productname").getValue().toString().trim();
+                    String image=userSnapshot.child("imageid").getValue().toString().trim();
+                    String price=userSnapshot.child("price").getValue().toString().trim();
+                    fileprice.add(price);
                     filenameList.add(name);
-
+                    imageurl.add(image);
                     Log.d(TAG, "onChildAdded:" + name);
 
 

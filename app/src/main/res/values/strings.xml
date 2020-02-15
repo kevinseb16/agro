@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">beach_agri</string>
+    <string name="app_name">AGRO</string>
     <string name="click_here_to_login">click here to join</string>
     <string name="register">Register</string>
     <string name="enter_password">Enter Password</string>
@@ -12,4 +12,5 @@
     <string name="label">product_name</string>
     <string name="rate_kg">Rate/Kg</string>
     <string name="amount">Amount</string>
+    <string name="priceview">Priceview</string>
 </resources>
