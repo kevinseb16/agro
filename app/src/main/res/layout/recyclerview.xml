@@ -18,9 +18,10 @@
         android:dividerHeight="1dp"
         android:clipToPadding="false"
         android:clipChildren="false"
-        card_view:cardElevation="10dp"
-        card_view:cardPreventCornerOverlap="false">
+        card_view:cardElevation="3dp"
+        card_view:cardPreventCornerOverlap="false"
 
+        app:cardUseCompatPadding="true">
 
         <LinearLayout
             android:layout_width="match_parent"

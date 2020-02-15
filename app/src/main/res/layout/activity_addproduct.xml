@@ -1,69 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical">
 
     <TextView
         android:id="@+id/TProductname"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:text="Product name"
-        android:layout_marginStart="@dimen/activity_horizontal_margin"
-        />
+        android:layout_gravity="center_horizontal"
+        android:text="Add Product"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#000000"
+        android:textSize="24sp" />
 
 
     <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:id="@+id/Productname"
-        android:layout_margin="@dimen/activity_vertical_margin">
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_margin="15dp"
+        android:background="@drawable/rounded_edittext1"
+        android:hint="Product name"
+        android:inputType="text"
+        android:outlineProvider="background"
+        android:paddingLeft="25dp">
 
     </EditText>
 
-    <TextView
-        android:id="@+id/TStock"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Stock"
-        android:textSize="20sp"
-        android:layout_marginStart="@dimen/activity_vertical_margin"
-        />
 
     <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:id="@+id/Stock"
-        android:layout_margin="@dimen/activity_vertical_margin">
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_margin="15dp"
+        android:background="@drawable/rounded_edittext1"
+        android:hint="Stock"
+        android:inputType="text"
+        android:outlineProvider="background"
+        android:paddingLeft="25dp">
 
     </EditText>
 
-    <TextView
-        android:id="@+id/Tprice"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Price/Kg"
-        android:textSize="20sp"
-        android:layout_marginStart="@dimen/activity_horizontal_margin"
-     />
 
     <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:id="@+id/EPrice"
-        android:layout_margin="@dimen/activity_vertical_margin">
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_margin="15dp"
+        android:background="@drawable/rounded_edittext1"
+        android:hint="Price/kg"
+        android:inputType="text"
+        android:outlineProvider="background"
+        android:paddingLeft="25dp">
 
     </EditText>
+
     <Button
         android:id="@+id/choosepicture"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Choose picture"
-        android:layout_margin="@dimen/activity_vertical_margin"/>
+        android:layout_margin="15dp"
+        android:background="@drawable/button2"
+        android:text="Add picture" />
 
     <Button
         android:id="@+id/AddProd"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:background="@drawable/button1"
         android:text="Add product" />
 </LinearLayout>

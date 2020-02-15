@@ -60,7 +60,7 @@ public class UploadListAdapter extends RecyclerView.Adapter<Viewholder> {
 
         holder.imageView.setImageBitmap(bm);
         holder.fileprice.setText(price+"Rs/Kg");
-        final Bitmap finalBm = bm;
+
         holder.setItemClickListener(new RecycleViewClickListener() {
             @Override
             public void onItemClick(int pos) {
@@ -72,6 +72,7 @@ public class UploadListAdapter extends RecyclerView.Adapter<Viewholder> {
         });
 
     }
+
 
     @Override
     public int getItemCount() {

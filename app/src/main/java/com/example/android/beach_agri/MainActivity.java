@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ProgressBar;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -42,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
     private List<String> filenameList;
     private List<String> imageurl;
     private List<String> fileprice;
+    private ProgressBar progressBar;
 
 
     @Override
@@ -63,7 +65,8 @@ public class MainActivity extends AppCompatActivity {
 
         FloatingActionButton fab = findViewById(R.id.fab);
         recyclerView=(RecyclerView)findViewById(R.id.Recyclerview);
-
+        progressBar=(ProgressBar)findViewById(R.id.progress);
+        recyclerView.setVisibility(View.INVISIBLE);
         //initialise list adapter
         uploadListAdapter = new UploadListAdapter(this,filenameList,imageurl,fileprice);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -88,6 +91,8 @@ public class MainActivity extends AppCompatActivity {
 
 
                 }
+                progressBar.setVisibility(View.GONE);
+                recyclerView.setVisibility(View.VISIBLE);
                 uploadListAdapter.notifyDataSetChanged();
             }
 

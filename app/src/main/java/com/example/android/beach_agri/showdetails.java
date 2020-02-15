@@ -1,7 +1,9 @@
 package com.example.android.beach_agri;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -47,8 +49,16 @@ public class showdetails extends AppCompatActivity {
         mlocation=(TextView)findViewById(R.id.location);
         mAmount=(TextView)findViewById(R.id.amount);
         mRate=(TextView)findViewById(R.id.Rate);
+        mPay=(Button)findViewById(R.id.payonline);
         pos=getIntent().getIntExtra("pos",0);
         image=getIntent().getStringExtra("image");
+
+        mPay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(),Payment.class));
+            }
+        });
         try {
             bm = new Retrievebitmap().execute(image).get();
         } catch (ExecutionException e) {
