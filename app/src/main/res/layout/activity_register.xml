@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#c7e1a1"
     android:orientation="vertical"
     android:paddingLeft="@dimen/activity_horizontal_margin"
@@ -40,17 +41,36 @@
             android:outlineProvider="background"
             android:paddingLeft="25dp" />
 
-        <EditText
-
-            android:id="@+id/editTextlocation"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_margin="15dp"
-            android:background="@drawable/rounded_edittext"
-            android:hint="Enter Location"
-            android:inputType="text"
-            android:outlineProvider="background"
-            android:paddingLeft="25dp" />
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <EditText
+
+                android:id="@+id/editTextlocation"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:layout_margin="15dp"
+                android:background="@drawable/rounded_edittext"
+                android:hint="Enter Location"
+                android:inputType="text"
+                android:outlineProvider="background"
+                android:paddingLeft="25dp" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_margin="15dp"
+                android:layout_gravity="end|bottom"
+
+
+                android:src="@drawable/marker"
+                app:backgroundTint="@color/colorPrimaryDark" />
+        </LinearLayout>
 
 
         <EditText

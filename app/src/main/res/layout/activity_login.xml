@@ -56,7 +56,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="15dp"
             android:background="@drawable/button"
-            android:text="Signup" />
+            android:text="Signin" />
 
         <TextView
             android:id="@+id/textViewSignUp"

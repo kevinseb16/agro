@@ -88,6 +88,7 @@ public class Addproduct extends AppCompatActivity {
                     product = new Product(user.getUid(), eProductname.getText().toString().trim(), Integer.parseInt(eStock.getText().toString().trim()), Integer.parseInt(ePrice.getText().toString().trim()), null);
                     mDatabase.child("Products").child(uniqueID).setValue(product);
                     mDatabase.child("Users").child(user.getUid()).child("ProductId").child(uniqueID).setValue("");
+                   
                     finish();
                 }
 

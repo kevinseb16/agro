@@ -13,4 +13,5 @@
     <string name="rate_kg">Rate/Kg</string>
     <string name="amount">Amount</string>
     <string name="priceview">Priceview</string>
+    <string name="google_maps_key">AIzaSyABtEcMv1vT207AhwdMQiiONqLOKUluh2U</string>
 </resources>

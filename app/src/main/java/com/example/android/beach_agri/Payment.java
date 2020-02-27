@@ -13,7 +13,7 @@ public class Payment extends AppCompatActivity {
         overridePendingTransition(R.anim.fadein, R.anim.fadeout);
         setContentView(R.layout.activity_payment);
         WebView webView=(WebView)findViewById(R.id.webview);
-        webView.loadUrl("https://akhilvenu.github.io/beachhack/");
+        webView.loadUrl("https://akhilvenu.github.io/beach3/");
 
     }
 }

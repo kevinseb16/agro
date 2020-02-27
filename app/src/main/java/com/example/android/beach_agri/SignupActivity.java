@@ -17,6 +17,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -38,7 +39,7 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
     private ProgressDialog progressDialog;
     private EditText editTextAddress;
     private EditText editContact;
-
+    private FloatingActionButton location;
 
     //defining firebaseauth object
     private FirebaseAuth firebaseAuth;
@@ -57,6 +58,7 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
 
 
         //initializing views
+        location=(FloatingActionButton)findViewById(R.id.fab1);
         editContact=(EditText)findViewById(R.id.editContact);
         editTextAddress=(EditText)findViewById(R.id.editTextlocation);
         editTextUsername = (EditText) findViewById(R.id.username);
@@ -69,6 +71,12 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
         progressDialog = new ProgressDialog(this);
 
         //attaching listener to button
+        location.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), Mapactivity.class));
+            }
+        });
         buttonSignup.setOnClickListener(this);
         textViewSignin.setOnClickListener(this);
         //if getCurrentUser does not returns null

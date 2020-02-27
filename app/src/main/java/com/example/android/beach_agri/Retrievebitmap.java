@@ -14,6 +14,8 @@ import java.net.URLConnection;
 import static android.content.ContentValues.TAG;
 
 public class Retrievebitmap extends AsyncTask<String,Void, Bitmap> {
+
+
     @Override
     protected Bitmap doInBackground(String... strings) {
         Bitmap bm = null;
@@ -34,6 +36,6 @@ public class Retrievebitmap extends AsyncTask<String,Void, Bitmap> {
 
     @Override
     protected void onPostExecute(Bitmap bitmap) {
-        ;
+
     }
 }
